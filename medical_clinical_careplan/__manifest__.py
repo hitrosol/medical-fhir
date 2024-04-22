@@ -5,8 +5,8 @@
 {
     "name": "Medical Care plan",
     "summary": "Medical care plan",
-    "version": "14.0.1.0.0",
-    "author": "CreuBlanca, ForgeFlow, Odoo Community Association (OCA), Tegin",
+    "version": "16.0.1.0.0",
+    "author": "Tegin, ForgeFlow, Dixmit",
     "website": "https://github.com/tegin/medical-fhir",
     "category": "Medical",
     "license": "LGPL-3",
