@@ -8,16 +8,12 @@ from odoo.tests import TransactionCase
 class TestCareplan(TransactionCase):
     def setUp(self):
         res = super(TestCareplan, self).setUp()
-        self.patient = self.env["medical.patient"].create(
-            {"name": "Test Patient"}
-        )
+        self.patient = self.env["medical.patient"].create({"name": "Test Patient"})
         self.plan = self.browse_ref("medical_workflow.mr_knee")
         return res
 
     def test_careplan_workflow(self):
-        request = self.env["medical.careplan"].create(
-            {"patient_id": self.patient.id}
-        )
+        request = self.env["medical.careplan"].create({"patient_id": self.patient.id})
         self.assertNotEqual(request.internal_identifier, "/")
         self.assertEqual(request.fhir_state, "draft")
         self.assertFalse(request.start_date)

@@ -10,9 +10,7 @@ class MedicalCareplanAddPlanDefinition(models.TransientModel):
     _inherit = "medical.add.plan.definition"
     _description = "Add a plan Definition on a Careplan"
 
-    patient_id = fields.Many2one(
-        related="careplan_id.patient_id", readonly=True
-    )
+    patient_id = fields.Many2one(related="careplan_id.patient_id", readonly=True)
 
     careplan_id = fields.Many2one(
         comodel_name="medical.careplan", string="Care plan", required=True
