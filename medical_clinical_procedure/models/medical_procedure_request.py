@@ -29,9 +29,7 @@ class MedicalProcedureRequest(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-    procedure_request_ids = fields.One2many(
-        inverse_name="procedure_request_id"
-    )
+    procedure_request_ids = fields.One2many(inverse_name="procedure_request_id")
     procedure_ids = fields.One2many(
         string="Related Procedure",
         comodel_name="medical.procedure",
@@ -71,9 +69,7 @@ class MedicalProcedureRequest(models.Model):
             "default_procedure_request_id": self.id,
             "default_name": self.name,
         }
-        result["domain"] = (
-            "[('procedure_request_id', '=', " + str(self.id) + ")]"
-        )
+        result["domain"] = "[('procedure_request_id', '=', " + str(self.id) + ")]"
         if len(self.procedure_ids) == 1:
             res = self.env.ref("medical.procedure.view.form", False)
             result["views"] = [(res and res.id or False, "form")]
@@ -82,9 +78,7 @@ class MedicalProcedureRequest(models.Model):
 
     def _get_internal_identifier(self, vals):
         return (
-            self.env["ir.sequence"]
-            .sudo()
-            .next_by_code("medical.procedure.request")
+            self.env["ir.sequence"].sudo().next_by_code("medical.procedure.request")
             or "/"
         )
 
@@ -100,8 +94,7 @@ class MedicalProcedureRequest(models.Model):
                 self.activity_definition_id and self.activity_definition_id.id
             ),
             "plan_definition_action_id": (
-                self.plan_definition_action_id
-                and self.plan_definition_action_id.id
+                self.plan_definition_action_id and self.plan_definition_action_id.id
             ),
             "service_id": self.service_id and self.service_id.id,
             "patient_id": self.patient_id.id,

@@ -50,9 +50,7 @@ class TestProcedure(TransactionCase):
             [("patient_id", "=", self.patient.id)]
         )
         self.assertEqual(len(procedure_requests), 0)
-        self.plan_check_up.execute_plan_definition(
-            {"patient_id": self.patient.id}
-        )
+        self.plan_check_up.execute_plan_definition({"patient_id": self.patient.id})
         procedure_requests = self.env["medical.procedure.request"].search(
             [("patient_id", "=", self.patient.id)]
         )
