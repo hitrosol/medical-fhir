@@ -10,7 +10,7 @@ class MedicalReportAbstract(models.AbstractModel):
     _description = "Abstract Diagnostic Report"
 
     name = fields.Char(string="Report Name")
-    conclusion = fields.Text()
+    conclusion = fields.Html()
     composition = fields.Html()
     item_blocked = fields.Boolean(help="When checked, no lines can be added")
     with_conclusion = fields.Boolean(

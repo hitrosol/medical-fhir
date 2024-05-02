@@ -76,7 +76,7 @@ class MedicalDiagnosticReport(models.Model):
     cancel_user_id = fields.Many2one(
         "res.users", string="Cancelled by User", readonly=True, copy=False
     )
-    conclusion = fields.Text(
+    conclusion = fields.Html(
         readonly=True,
         states={"draft": [("readonly", False)]},
         prefetch=False,
@@ -84,7 +84,7 @@ class MedicalDiagnosticReport(models.Model):
         inverse="_inverse_conclusion",
         copy=True,
     )
-    database_conclusion = fields.Text(
+    database_conclusion = fields.Html(
         readonly=True,
         states={"draft": [("readonly", False)]},
         copy=False,

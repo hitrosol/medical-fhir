@@ -30,7 +30,7 @@ class MedicalDiagnosticReportTemplate(models.Model):
     name = fields.Char(required=True)
     title = fields.Char(translate=True)
     composition = fields.Html(translate=True, sanitize=False)
-    conclusion = fields.Text(translate=True)
+    conclusion = fields.Html(translate=True)
     active = fields.Boolean(default=True)
 
     def _generate_report_vals(self, encounter=None, **kwargs):
