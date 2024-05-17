@@ -15,12 +15,6 @@ This module initializes the terminology models of medical.
 
 Find more information about FHIR codification systems in: https://www.hl7.org/fhir/codesystem.html
 
-Installation
-============
-
-To install this module, go to 'Medical / Configuration / Settings' and inside
-'Terminologies' activate 'Terminology'.
-
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/159/11.0
