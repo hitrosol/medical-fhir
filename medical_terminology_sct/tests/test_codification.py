@@ -7,9 +7,7 @@ from odoo.tests import TransactionCase
 
 class TestCodification(TransactionCase):
     def test_codification(self):
-        code = self.env["medical.sct.concept"].create(
-            {"code": "001", "name": "Test"}
-        )
+        code = self.env["medical.sct.concept"].create({"code": "001", "name": "Test"})
         self.assertEqual(code.display_name, "[001] Test")
 
     def test_search(self):
