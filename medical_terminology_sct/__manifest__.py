@@ -5,8 +5,8 @@
 {
     "name": "Medical SCT Codification",
     "summary": "Medical codification base",
-    "version": "14.0.1.0.0",
-    "author": "CreuBlanca, ForgeFlow, Tegin, Odoo Community Association (OCA)",
+    "version": "16.0.1.0.0",
+    "author": "CreuBlanca, Tegin, ForgeFlow, Odoo Community Association (OCA)",
     "category": "Medical",
     "website": "https://github.com/tegin/medical-fhir",
     "license": "LGPL-3",

@@ -10,12 +10,6 @@ This module creates SNOMED CT codification system used on FHIR:
 
 * `SNOMED CT <https://www.hl7.org/fhir/codesystem-snomedct.html>`_
 
-Installation
-============
-
-To install this module, go to 'Medical / Configuration / Settings' and inside
-'Terminologies' activate 'SNOMED CT'.
-
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/159/11.0
