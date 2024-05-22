@@ -8,13 +8,6 @@ Medical Practitioner Specialty
 
 This module adds specialties on practitioner roles.
 
-Installation
-============
-
-To install this module, go to 'Medical / Configuration / Settings' and inside
-'Administration / Practitioner' activate the option 'Add specialties to a
-practitioner role'.
-
 Usage
 =====
 

@@ -5,14 +5,13 @@
 
 {
     "name": "Medical Administration Practitioner Specialty",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "ForgeFlow, CreuBlanca, Tegin, LasLabs, "
     "Odoo Community Association (OCA)",
     "category": "Medical",
     "website": "https://github.com/tegin/medical-fhir",
     "license": "LGPL-3",
     "depends": [
-        "medical_administration_practitioner",
         "medical_terminology_sct",
     ],
     "data": [
