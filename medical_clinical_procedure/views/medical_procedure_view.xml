@@ -9,7 +9,7 @@
         <field name="name">medical.procedure.view.tree</field>
         <field name="model">medical.procedure</field>
         <field name="mode">primary</field>
-        <field name="inherit_id" ref="medical_workflow.medical_event_tree" />
+        <field name="inherit_id" ref="medical_base.medical_event_tree" />
         <field name="arch" type="xml">
             <field name="service_id" position="after">
                 <field name="performer_id" />
@@ -20,7 +20,7 @@
         <field name="name">medical.procedure.view.form</field>
         <field name="model">medical.procedure</field>
         <field name="mode">primary</field>
-        <field name="inherit_id" ref="medical_workflow.medical_event_form" />
+        <field name="inherit_id" ref="medical_base.medical_event_form" />
         <field name="arch" type="xml">
             <group name="inheritance" position="inside">
                 <field name="procedure_request_id" />
