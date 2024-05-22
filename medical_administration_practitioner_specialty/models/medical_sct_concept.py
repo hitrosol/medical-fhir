@@ -15,6 +15,4 @@ class MedicalSCTConcept(models.Model):
     @api.depends("parent_ids")
     def _compute_is_specialty(self):
         for record in self:
-            record.is_specialty = record.check_property(
-                "is_specialty", ["394658006"]
-            )
+            record.is_specialty = record.check_property("is_specialty", ["394658006"])
