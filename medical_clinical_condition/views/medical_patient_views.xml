@@ -9,10 +9,6 @@
         <field name="name">medical.patient.form</field>
         <field name="model">medical.patient</field>
         <field name="inherit_id" ref="medical_base.medical_patient_form" />
-        <field
-            name="groups_id"
-            eval="[(4, ref('medical_base.group_medical_assistance_user'))]"
-        />
         <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
                 <button
@@ -21,6 +17,7 @@
                     string=" Create Clin. Condition"
                     type="object"
                     icon="fa-heartbeat"
+                    groups="medical_base.group_medical_assistance_user"
                 />
                 <button
                     name="create_allergy"
@@ -28,6 +25,7 @@
                     string=" Create Allergy"
                     type="object"
                     icon="fa-allergies"
+                    groups="medical_base.group_medical_assistance_user"
                 />
             </xpath>
             <xpath expr="//div[@name='button_box']" position="inside">
@@ -37,6 +35,7 @@
                     class="oe_stat_button"
                     icon="fa-heartbeat"
                     attrs="{'invisible':[('medical_condition_count', '=', 0)]}"
+                    groups="medical_base.group_medical_assistance_user"
                 >
                     <field
                         name="medical_condition_count"
@@ -51,6 +50,7 @@
                     class="oe_stat_button"
                     icon="fa-allergies"
                     attrs="{'invisible':[('medical_allergies_count', '=', 0)]}"
+                    groups="medical_base.group_medical_assistance_user"
                 >
                     <field
                         name="medical_allergies_count"
@@ -65,6 +65,7 @@
                     class="oe_stat_button"
                     icon="fa-exclamation-triangle"
                     attrs="{'invisible':[('medical_warning_count', '=', 0)]}"
+                    groups="medical_base.group_medical_assistance_user"
                 >
                     <field
                         name="medical_warning_count"
@@ -80,10 +81,6 @@
         <field name="name">medical.patient.form</field>
         <field name="model">medical.patient</field>
         <field name="inherit_id" ref="medical_base.medical_patient_his_form" />
-        <field
-            name="groups_id"
-            eval="[(4, ref('medical_base.group_medical_assistance_user'))]"
-        />
         <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
                 <button
@@ -92,6 +89,7 @@
                     string=" Create Clin. Condition"
                     type="object"
                     icon="fa-heartbeat"
+                    groups="medical_base.group_medical_assistance_user"
                 />
                 <button
                     name="create_allergy"
@@ -99,6 +97,7 @@
                     string=" Create Allergy"
                     type="object"
                     icon="fa-allergies"
+                    groups="medical_base.group_medical_assistance_user"
                 />
             </xpath>
             <xpath expr="//div[@name='button_box']" position="inside">
@@ -108,6 +107,7 @@
                     class="oe_stat_button"
                     icon="fa-heartbeat"
                     attrs="{'invisible':[('medical_condition_count', '=', 0)]}"
+                    groups="medical_base.group_medical_assistance_user"
                 >
                     <field
                         name="medical_condition_count"
@@ -122,6 +122,7 @@
                     class="oe_stat_button"
                     icon="fa-allergies"
                     attrs="{'invisible':[('medical_allergies_count', '=', 0)]}"
+                    groups="medical_base.group_medical_assistance_user"
                 >
                     <field
                         name="medical_allergies_count"
@@ -136,6 +137,7 @@
                     class="oe_stat_button"
                     icon="fa-exclamation-triangle"
                     attrs="{'invisible':[('medical_warning_count', '=', 0)]}"
+                    groups="medical_base.group_medical_assistance_user"
                 >
                     <field
                         name="medical_warning_count"
