@@ -24,9 +24,7 @@ class MedicalEncounter(models.Model):
         string="# of Allergies",
     )
 
-    medical_warning_ids = fields.One2many(
-        related="patient_id.medical_warning_ids"
-    )
+    medical_warning_ids = fields.One2many(related="patient_id.medical_warning_ids")
 
     medical_warning_count = fields.Integer(
         related="patient_id.medical_warning_count",

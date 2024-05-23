@@ -23,9 +23,7 @@ class MedicalCondition(models.Model):
 
     active = fields.Boolean(default=True, tracking=True)
 
-    create_warning = fields.Boolean(
-        compute="_compute_create_warning", store=True
-    )
+    create_warning = fields.Boolean(compute="_compute_create_warning", store=True)
 
     is_allergy = fields.Boolean()
 
@@ -40,10 +38,7 @@ class MedicalCondition(models.Model):
 
     @api.model
     def _get_internal_identifier(self, vals):
-        return (
-            self.env["ir.sequence"].sudo().next_by_code("medical.condition")
-            or "/"
-        )
+        return self.env["ir.sequence"].sudo().next_by_code("medical.condition") or "/"
 
     def _compute_condition_name(self):
         for rec in self:
@@ -52,15 +47,10 @@ class MedicalCondition(models.Model):
             else:
                 rec.name = rec.clinical_finding_id.name
 
-    @api.depends(
-        "allergy_id.create_warning", "clinical_finding_id.create_warning"
-    )
+    @api.depends("allergy_id.create_warning", "clinical_finding_id.create_warning")
     def _compute_create_warning(self):
         for rec in self:
-            if (
-                rec.allergy_id.create_warning
-                or rec.clinical_finding_id.create_warning
-            ):
+            if rec.allergy_id.create_warning or rec.clinical_finding_id.create_warning:
                 rec.create_warning = True
             else:
                 rec.create_warning = False

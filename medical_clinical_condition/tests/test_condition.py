@@ -21,21 +21,17 @@ class TestCondition(TransactionCase):
         self.allergy_substance_no_warning = self.env[
             "medical.allergy.substance"
         ].create({"name": "Allergy substance no warning"})
-        self.allergy_substance_warning = self.env[
-            "medical.allergy.substance"
-        ].create({"name": "Allergy substance warning", "create_warning": True})
+        self.allergy_substance_warning = self.env["medical.allergy.substance"].create(
+            {"name": "Allergy substance warning", "create_warning": True}
+        )
 
     def test_create_condition_from_patient(self):
         action = self.patient.create_medical_clinical_condition()
-        self.assertEqual(
-            action["context"]["default_patient_id"], self.patient.id
-        )
+        self.assertEqual(action["context"]["default_patient_id"], self.patient.id)
 
     def test_create_condition_from_encounter(self):
         action = self.encounter.create_medical_clinical_condition()
-        self.assertEqual(
-            action["context"]["default_patient_id"], self.patient.id
-        )
+        self.assertEqual(action["context"]["default_patient_id"], self.patient.id)
 
     def test_view_conditions_from_patient(self):
         res = self.patient.action_view_medical_conditions()
@@ -71,16 +67,12 @@ class TestCondition(TransactionCase):
 
     def test_create_allergy_from_patient(self):
         action = self.patient.create_allergy()
-        self.assertEqual(
-            action["context"]["default_patient_id"], self.patient.id
-        )
+        self.assertEqual(action["context"]["default_patient_id"], self.patient.id)
         self.assertTrue(action["context"]["default_is_allergy"])
 
     def test_create_allergy_from_encounter(self):
         action = self.encounter.create_allergy()
-        self.assertEqual(
-            action["context"]["default_patient_id"], self.patient.id
-        )
+        self.assertEqual(action["context"]["default_patient_id"], self.patient.id)
         self.assertTrue(action["context"]["default_is_allergy"])
 
     def test_create_allergy_without_warning(self):
@@ -106,9 +98,7 @@ class TestCondition(TransactionCase):
                 "allergy_id": self.allergy_substance_warning.id,
             }
         )
-        self.assertEqual(
-            allergy_warning.name, "Allergy to Allergy substance warning"
-        )
+        self.assertEqual(allergy_warning.name, "Allergy to Allergy substance warning")
         self.assertTrue(allergy_warning.create_warning)
         self.assertEqual(self.patient.medical_allergies_count, 1)
         self.assertEqual(self.patient.medical_warning_count, 1)
