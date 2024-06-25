@@ -24,11 +24,12 @@ class MedicalDiagnosticReportTemplatePrint(models.TransientModel):
         return self.env["res.lang"].get_installed()
 
     def print(self):
+        report_dict = self.env["ir.actions.report"]._for_xml_id(
+            "medical_diagnostic_report.medical_diagnostic_report_template_preview"
+        )
         return (
             self.env["ir.actions.report"]
-            ._for_xml_id(
-                "medical_diagnostic_report.medical_diagnostic_report_template_preview"
-            )
+            .browse(report_dict["id"])
             .with_context(lang=self.lang, force_lang=self.lang)
             .report_action(
                 self.diagnostic_template_id,

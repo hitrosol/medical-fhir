@@ -138,14 +138,20 @@
                             string="Composition"
                             attrs="{'invisible': [('with_composition','=',False)]}"
                         >
-                            <field name="composition" />
+                            <field
+                                name="composition"
+                                options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"
+                            />
                         </page>
                         <page
                             name="conclusions"
                             string="Conclusions"
                             attrs="{'invisible': [('with_conclusion','=',False)]}"
                         >
-                            <field name="conclusion" />
+                            <field
+                                name="conclusion"
+                                options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"
+                            />
                         </page>
                     </notebook>
                 </sheet>

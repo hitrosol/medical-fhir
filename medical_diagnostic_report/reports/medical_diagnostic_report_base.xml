@@ -135,7 +135,7 @@
             <div>
                 <t t-set="observations" t-value="doc.observation_ids" />
                 <t t-if="doc.with_observation and observations">
-                    <table class="table table-condensed">
+                    <table class="table table-condensed" style="border: white">
                         <tbody>
                             <div>
                                 <t t-foreach="observations" t-as="obs">
